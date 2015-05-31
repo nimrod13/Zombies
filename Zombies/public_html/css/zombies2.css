@@ -92,6 +92,16 @@ body {
     top: 22%;
 }
 
+.rightHand{
+    background: url(../images/righthand.png) no-repeat center;
+    background-size: contain;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    left: 57%;
+    top: 51%;
+}
+
 .head{
     background: url(../images/head.png) no-repeat center;
     background-size: contain;
