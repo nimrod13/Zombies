@@ -22,11 +22,11 @@ function zombie_startup() {
         $('#rFoot').off();
         $("#rFoot").animate({
             left: "+=50",
-            top: "-=50"
+            top: "+=120"
         }, {
             duration: 600,
             step: function(now, fx) {
-                var deg = -(600 - now) / 6;
+                var deg = (600 - now) / 18;
                 console.log(now);
                 $(this).css({"transform": "rotate(" + deg + "deg)"});
             }
@@ -36,7 +36,7 @@ function zombie_startup() {
     $('#head').click(function() {
         $('#head').off();
         $("#head").animate({
-            left: "-=40",
+            left: "-=90"
         });
     });
 
@@ -44,7 +44,7 @@ function zombie_startup() {
         $('#lArm').off();
         $("#lArm").animate({
             left: "+=40",
-            top: "-=50"
+            top: "-=70"
         });
     });
 
@@ -52,19 +52,27 @@ function zombie_startup() {
         $('#rArm').off();
         $("#rArm").animate({
             left: "+=40",
-            top: "+=50"
+            top: "+=110"
         });
     });
 
+    $('#rHand').click(function() {
+        $('#rHand').off();
+        $("#rHand").animate({
+            left: "+=40",
+            top: "+=90"
+        });
+    });
+    
     $('#lLeg').click(function() {
         $('#llf').off();
         $("#llf").animate({
             left: "+=50",
-            top: "-=50"
+            top: "-=180"
         }, {
             duration: 600,
             step: function(now, fx) {
-                var deg = -(600 - now) / 6;
+                var deg = -(600 - now) / 20;
                 console.log(now);
                 $("#llf").css({"transform": "rotate(" + deg + "deg)"});
             }
@@ -75,11 +83,11 @@ function zombie_startup() {
         $('#rlf').off();
         $("#rlf").animate({
             left: "+=50",
-            top: "-=50"
+            top: "+=155"
         }, {
             duration: 600,
             step: function(now, fx) {
-                var deg = -(600 - now) / 6;
+                var deg = (600 - now) / 24;
                 console.log(now);
                 $(this).css({"transform": "rotate(" + deg + "deg)"});
             }
