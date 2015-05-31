@@ -6,12 +6,12 @@ function zombie_startup() {
     $('#lFoot').click(function() {
         $('#lFoot').off();
         $("#lFoot").animate({
-            left: "+=50",
-            top: "-=50"
+            left: "+=30",
+            top: "-=140"
         }, {
             duration: 600,
             step: function(now, fx) {
-                var deg = -(600 - now) / 6;
+                var deg = -(600 - now) / 7;
                 console.log(now);
                 $(this).css({"transform": "rotate(" + deg + "deg)"});
             }
@@ -22,7 +22,7 @@ function zombie_startup() {
         $('#rFoot').off();
         $("#rFoot").animate({
             left: "+=50",
-            top: "+=120"
+            top: "+=110"
         }, {
             duration: 600,
             step: function(now, fx) {
@@ -67,7 +67,7 @@ function zombie_startup() {
     $('#lLeg').click(function() {
         $('#llf').off();
         $("#llf").animate({
-            left: "+=50",
+            left: "+=30",
             top: "-=180"
         }, {
             duration: 600,
@@ -82,8 +82,8 @@ function zombie_startup() {
     $('#rLeg').click(function() {
         $('#rlf').off();
         $("#rlf").animate({
-            left: "+=50",
-            top: "+=155"
+            left: "+=30",
+            top: "+=140"
         }, {
             duration: 600,
             step: function(now, fx) {
