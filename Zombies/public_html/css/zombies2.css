@@ -1,6 +1,8 @@
 html, body, #splaceApp, .background {
     width: 100%;
     height: 100%;
+    background-color: rgb(89, 148, 148);
+    overflow: hidden;
 }
 
 .background{

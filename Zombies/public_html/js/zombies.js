@@ -5,6 +5,13 @@ $(document).ready(function() {
 function zombie_startup() {
     $('#lFoot').click(function() {
         $('#lFoot').off();
+        var lf = $('#lFoot');
+        lf.remove();
+        $('#thebody').append(lf);
+//          margin-left: 616px;
+//  margin-top: 285px;
+        lf.css("margin-left", "646px");
+        lf.css("margin-top", "185px");
         $("#lFoot").animate({
             left: "+=30",
             top: "-=140"
@@ -20,9 +27,14 @@ function zombie_startup() {
 
     $('#rFoot').click(function() {
         $('#rFoot').off();
+        var rf = $('#rFoot');
+        rf.remove();
+        $('#thebody').append(rf);
+        rf.css("margin-left", "663px");
+        rf.css("margin-top", "358px");
         $("#rFoot").animate({
-            left: "+=50",
-            top: "+=110"
+            left: "+=40",
+            top: "+=100"
         }, {
             duration: 600,
             step: function(now, fx) {
@@ -63,9 +75,10 @@ function zombie_startup() {
             top: "+=90"
         });
     });
-    
+
     $('#lLeg').click(function() {
-        $('#llf').off();
+        $('#lLeg').off();
+        $('#lFoot').off();
         $("#llf").animate({
             left: "+=30",
             top: "-=180"
@@ -80,7 +93,8 @@ function zombie_startup() {
     });
 
     $('#rLeg').click(function() {
-        $('#rlf').off();
+        $('#rLeg').off();
+        $('#rFoot').off();
         $("#rlf").animate({
             left: "+=30",
             top: "+=140"
