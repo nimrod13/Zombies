@@ -81,7 +81,7 @@ function zombie_startup() {
         $('#lFoot').off();
         $("#llf").animate({
             left: "+=30",
-            top: "-=180"
+            top: "-=190"
         }, {
             duration: 600,
             step: function(now, fx) {

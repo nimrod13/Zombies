@@ -12,6 +12,9 @@ html, body, #splaceApp, .background {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
+    background-position: 0px 0px;
+    width: 1024px;
+    height: 730px;
 }
 
 .thebody{
@@ -20,8 +23,10 @@ html, body, #splaceApp, .background {
     width: 659px;
     height: 595px;
     position: absolute;
-    left: 21%;
-    top: 20%;
+    left: 184px;
+    top: 30px;
+    /*    left: 18%;
+        top: 4%;*/
 }
 
 .thehead{
