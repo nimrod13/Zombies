@@ -3,9 +3,12 @@ $(document).ready(function() {
 });
 
 function zombie_startup() {
+    registerDeviceMotion();
+    
     $('#lFoot').click(function() {
         $('#lFoot').off();
         var lf = $('#lFoot');
+        registerElement(lf);
         lf.remove();
         $('#thebody').append(lf);
 //          margin-left: 616px;
@@ -28,6 +31,7 @@ function zombie_startup() {
     $('#rFoot').click(function() {
         $('#rFoot').off();
         var rf = $('#rFoot');
+        registerElement(rf);
         rf.remove();
         $('#thebody').append(rf);
         rf.css("margin-left", "663px");
@@ -46,6 +50,7 @@ function zombie_startup() {
     });
 
     $('#head').click(function() {
+        registerElement($('#head'));
         $('#head').off();
         $("#head").animate({
             left: "-=90"
@@ -53,6 +58,7 @@ function zombie_startup() {
     });
 
     $('#lArm').click(function() {
+        registerElement($('#lArm'));
         $('#lArm').off();
         $("#lArm").animate({
             left: "+=40",
@@ -61,6 +67,7 @@ function zombie_startup() {
     });
 
     $('#rArm').click(function() {
+        registerElement($('#rArm'));
         $('#rArm').off();
         $("#rArm").animate({
             left: "+=40",
@@ -69,6 +76,7 @@ function zombie_startup() {
     });
 
     $('#rHand').click(function() {
+        registerElement($('#rHand'));
         $('#rHand').off();
         $("#rHand").animate({
             left: "+=40",
@@ -77,6 +85,7 @@ function zombie_startup() {
     });
 
     $('#lLeg').click(function() {
+        registerElement($('#lLeg'));
         $('#lLeg').off();
         $('#lFoot').off();
         $("#llf").animate({
@@ -93,6 +102,7 @@ function zombie_startup() {
     });
 
     $('#rLeg').click(function() {
+        registerElement($('#rLeg'));
         $('#rLeg').off();
         $('#rFoot').off();
         $("#rlf").animate({
@@ -111,4 +121,29 @@ function zombie_startup() {
 
 function zombie_teardown() {
 
+}
+
+function registerDeviceMotion() {
+	if(window.DeviceMotionEvent) {
+		window.addEventListener('deviceorientation', function(oe) {			
+//			oHandler.update(oe.gamma);
+                        console.log(oe.gamma);
+                        updateOrientation(oe.gamma);
+		}, false);
+
+	}else{
+		alert('Sorry your device does not support motion events');
+	}
+};
+
+var elementsArray = [];
+
+function registerElement(element){
+    elementsArray.push(element);   
+}
+
+function updateOrientation(gamma){
+    for (i=0; i<=elementsArray.length(); i++){
+        elementsArray[i].left(gamma);
+    }
 }
