@@ -11,8 +11,6 @@ function zombie_startup() {
         registerElement(lf);
         lf.remove();
         $('#thebody').append(lf);
-//          margin-left: 616px;
-//  margin-top: 285px;
         lf.css("margin-left", "646px");
         lf.css("margin-top", "185px");
         $("#lFoot").animate({
@@ -126,11 +124,9 @@ function zombie_teardown() {
 function registerDeviceMotion() {
 	if(window.DeviceMotionEvent) {
 		window.addEventListener('deviceorientation', function(oe) {			
-//			oHandler.update(oe.gamma);
-                        console.log(oe.gamma);
-                        updateOrientation(oe.gamma);
+          //              updateOrientation(oe.beta*(-1)+45);
+           updateOrientation(oe.beta+45);
 		}, false);
-
 	}else{
 		alert('Sorry your device does not support motion events');
 	}
@@ -142,8 +138,12 @@ function registerElement(element){
     elementsArray.push(element);   
 }
 
-function updateOrientation(gamma){
-    for (i=0; i<=elementsArray.length(); i++){
-        elementsArray[i].left(gamma);
+function updateOrientation(angle){
+    angle=angle*10;
+    for (i=0; i<elementsArray.length; i++){
+    elementsArray[i].offset({ top: $(window).height()-elementsArray[i].height(), left: angle });
+    if(elementsArray[i].offset().left>=210 && elementsArray[i].offset().left<=230){       
+          elementsArray[i].fadeOut( "slow" );
+        }
     }
 }
